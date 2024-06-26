@@ -19,6 +19,10 @@ function Add_Meta() {
                     title: response.message,
                     showConfirmButton: false,
                     timer: 1500
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        location.reload(); 
+                    }
                 });
                 $("#addMetaModal").modal("hide");
             } else {
@@ -109,6 +113,10 @@ function Eliminar_Meta(IdMeta,NombreMeta) {
                         title: "Meta eliminada exitosamente",
                         showConfirmButton: false,
                         timer: 1500
+                    }).then((result) => {
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            location.reload();
+                        }
                     });
                 },
                 error: function (error) {
@@ -237,6 +245,10 @@ function ChangeMetaModal() {
                 title: "Meta modificada exitosamente",
                 showConfirmButton: false,
                 timer: 1500
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    location.reload();
+                }
             });
             console.log("Actualización exitosa:", response);
         },
@@ -259,7 +271,7 @@ function Modificar_Meta(IdMeta, NombreMeta) {
     $("#newName").val(NombreMeta);
     $("#hiddenId").val(IdMeta);
 
-    $("#ChangeTareaModal").modal("show");
+    $("#ChangeMetaModal").modal("show");
 }
 
 function loadTareasTable() {

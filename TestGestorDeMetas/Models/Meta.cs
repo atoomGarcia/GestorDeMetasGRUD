@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestGestorDeMetas.Models
 {
@@ -15,6 +16,11 @@ namespace TestGestorDeMetas.Models
         public DateTime Fecha { get; set; }
         public int Estatus { get; set; }
 
+        [NotMapped]
+        public double Porcentaje { get; set; }
+
         public virtual ICollection<Tarea> Tareas { get; set; }
+
+        
     }
 }
