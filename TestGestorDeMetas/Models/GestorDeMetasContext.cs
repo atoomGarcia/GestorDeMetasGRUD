@@ -56,6 +56,8 @@ namespace TestGestorDeMetas.Models
                     .HasConstraintName("FK_Tarea_Meta");
             });
 
+            modelBuilder.Entity<MetaWithPercentage>().HasNoKey();
+
             OnModelCreatingPartial(modelBuilder);
         }
 

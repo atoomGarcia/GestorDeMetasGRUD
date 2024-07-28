@@ -23,4 +23,13 @@ namespace TestGestorDeMetas.Models
 
         
     }
+
+    public class MetaWithPercentage
+    {
+        public int IdMeta { get; set; }
+        public string Nombre { get; set; }
+        public DateTime Fecha { get; set; }
+        public int Estatus { get; set; }
+        public double Porcentaje { get; set; }
+    }
 }
